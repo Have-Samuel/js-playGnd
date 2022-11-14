@@ -13,7 +13,7 @@ function createAndWriteOutput(operator, resultBeforeCal, calNumber) {
   outputResult(currentResult, calDescription); // From Vendor.js
 }
 
-function writeLog(
+function writeToLog(
   operationIdentifier,
   prevResult,
   operationNumber,
@@ -34,7 +34,7 @@ function add() {
   const initialResult = currentResult;
   currentResult += enteredNumber;
   createAndWriteOutput('+', initialResult, enteredNumber);
-  writeLog('ADD', initialResult, enteredNumber, currentResult);
+  writeToLog('ADD', initialResult, enteredNumber, currentResult);
 }
 
 function subtract() {
@@ -42,7 +42,7 @@ function subtract() {
   const initialResult = currentResult;
   currentResult -= enteredNumber;
   createAndWriteOutput('-', initialResult, enteredNumber);
-  writeLog('SUBTRACT', initialResult, enteredNumber, currentResult);
+  writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult);
 }
 
 function multiply() {
@@ -50,7 +50,7 @@ function multiply() {
   const initialResult = currentResult;
   currentResult *= enteredNumber;
   createAndWriteOutput('*', initialResult, enteredNumber);
-  writeLog('MULTIPLY', initialResult, enteredNumber, currentResult);
+  writeToLog('MULTIPLY', initialResult, enteredNumber, currentResult);
 }
 
 function divide() {
@@ -58,7 +58,7 @@ function divide() {
   const initialResult = currentResult;
   currentResult /= enteredNumber;
   createAndWriteOutput('/', initialResult, enteredNumber);
-  writeLog('DIVIDE', initialResult, enteredNumber, currentResult);
+  writeToLog('DIVIDE', initialResult, enteredNumber, currentResult);
 }
 
 addBtn.addEventListener('click', add);
